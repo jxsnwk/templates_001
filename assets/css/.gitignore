@@ -1,0 +1,3 @@
+# scss,map ファイルを除く
+*.scss
+*.map

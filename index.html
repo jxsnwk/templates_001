@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>シナリオタイトル</title>
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="./assets/css/layout.css">
+    <link rel="stylesheet" href="./assets/css/parts.css">
+    <script type="text/javascript" src="./assets/js/parts.js"></script>
+  </head>
+  <body oncopy="rubyToggle()" onload="countText()">
+    <header>
+      <div class="title">シナリオタイトル<br></div>
+      (本文：<span id="countResult"></span>)
+    </header>
+    <div class="wrap">
+
+    <div class="navi">
+      <ul class="menu">
+
+        <!-- コピペ時ふりがなON/OFFパーツ：ここから -->
+        <div class="toggle_button">
+          <input id="toggle" class="toggle_input" type='checkbox'>
+          <label for="toggle" class="toggle_label">
+            <span></span>
+          </label>
+        </div>
+        <!-- コピペ時ふりがなON/OFFパーツ：ここまで -->
+      
+        <li><a href="#pl">PL情報</a></li>
+        <li><a href="#kp">KP情報</a></li>
+      <details>
+        <summary>
+          シナリオ本文
+        </summary>
+        <li><a href="#op">導入</a></li>
+        <details>
+          <summary>
+          1日目
+          </summary>
+          <li><a href="#1">図書館</a></li>
+          <li><a href="#2">駅前</a></li>
+        </details>
+        <details>
+          <summary>
+          2日目
+          </summary>
+          <li><a href="#3">朝イベント</a></li>
+          <li><a href="#4">本拠地</a></li>
+          <ul class="sub">
+          <li><a href="#4-1">・1F</a></li>
+          <li><a href="#4-2">・地下</a></li>
+          </ul>
+        </details>
+        <li><a href="#ed">エンディング</a></li>
+        <li><a href="#clear">クリア報酬</a></li>
+      </details>
+      <li><a href="#agreement">利用規約</a></li>
+      </ul>
+    </div><!-- class:navi -->
+
+    <div class="contents">
+      <div class="text" id="countTextarea">
+
+       <h1 id="pl">PL情報</h1>
+       <table class="overview">
+        <tr>
+          <th>システム</th>
+          <td>クトゥルフ神話TRPG第6版</td>
+        </tr>
+        <tr>
+          <th>タイトル</th>
+          <td>シナリオタイトル</td>
+        </tr>
+        <tr>
+          <th>プレイ人数</th>
+          <td>1～4名</td>
+        </tr>
+        <tr>
+          <th>プレイ時間</th>
+          <td>6～8時間</td>
+        </tr>
+        <tr>
+          <th>傾向</th>
+          <td>現代舞台、島クローズド</td>
+        </tr>
+        <tr>
+          <th>推奨技能</th>
+          <td>≪目星≫≪聞き耳≫≪図書館≫≪オカルト≫</td>
+        </tr>
+      </table>
+
+       <h2>シナリオ概要</h2>
+       自宅に届いた招待状。<br>
+       それは、知人のフルート奏者の誕生パーティー開催を知らせるものだった。<br>
+       そうして訪れた孤島の洋館は、台風の来訪で外界と閉ざされることとなる。<br>
+       <br>
+       探偵、隠し財産の噂に、島に伝わるわらべ歌。<br>
+       何も起きないはずもなく。<br>
+       果たして、聴こえた不気味なフルートの音色が<ruby><rb>誘</rb><rp>(</rp><rt>いざな</rt><rp>)</rp></ruby>う先は……。<br>
+       <br>
+       という感じで使えます。<br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+
+       <h1 id="kp">KP情報</h1>
+       本文はこのように表示されます。<br>
+       その他装飾は以下の通りです。<br>
+       <br>
+       <ul>
+        <li>リスト</li>
+        <li>リスト</li>
+        <li>リスト</li>
+       </ul>
+       <br>
+       <a href="#1">テキストリンク</a><br>
+       <br>
+       <h1>見出しh1</h1>
+       <h2>見出しh2</h2>
+       <h3>見出しh3</h3>
+       <h4>見出しh4</h4>
+       <br>
+      装飾ボックス　カラーバリエーション3種
+      <div class="box1">注釈・描写など</div>
+      <div class="box2">注釈・描写など</div>
+      <div class="box3">注釈・描写など</div>
+      <details>
+        <summary>
+          追加装飾例
+        </summary>
+        <div class="box1 tg">class「tg」追加で「KP情報」タグつきに</div>
+        <div class="box2 rd">class「rd」追加で角丸に</div>
+       </details>
+
+       <br>
+       <div class="history">
+        更新履歴<br>
+        ▽XXXX/XX/XX up
+        </div>
+       <br>
+       <br>
+       <br>
+       <br>
+
+       <h2>機能類紹介</h2>
+       <h3>文字カウント</h3>
+       <a href="#">シナリオタイトル下「(本文：約〇〇字)」の部分</a>は、100単位四捨五入でふんわり自動カウントしています。<br>
+
+       <br>
+       <br>
+
+       <h3>コピペ時ふりがなON/OFF</h3>
+        コピー＆ペースト時に、ふりがなをつけた状態で貼り付けるかどうかを選べます。<br>
+        左上のボタンでON/OFFが切り替えられます。デフォルトはOFFです。<br>
+        以下サンプルテキストのコピペで挙動をご確認いただけます。<br>
+        <br>
+        サンプルテキスト<br>
+        <div class="box1">
+        「ではみなさんは、そういうふうに川だと<ruby><rb>云</rb><rp>(</rp><rt>い</rt><rp>)</rp></ruby>われたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
+        先生は、黒板に<ruby><rb>吊</rb><rp>(</rp><rt>つる</rt><rp>)</rp></ruby>した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを<ruby><rb>指</rb><rp>(</rp><rt>さ</rt><rp>)</rp></ruby>しながら、みんなに<ruby><rb>問</rb><rp>(</rp><rt>とい</rt><rp>)</rp></ruby>をかけました。<br>
+        </div>
+        <a href="https://www.aozora.gr.jp/cards/000081/files/456_15050.html" target="_blank">宮沢賢治作「銀河鉄道の夜」　青空文庫より引用</a><br>
+        <br>
+        <textarea name="example" placeholder="貼り付け動作確認用。ここに貼り付けられます。" cols="60" rows="6"></textarea>
+        <details>
+          <summary>
+            貼り付け時サンプル
+          </summary>
+          OFF選択時<br>
+          <div class="box2">
+          「ではみなさんは、そういうふうに川だと云われたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
+          先生は、黒板に吊した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを指しながら、みんなに問をかけました。
+          </div>
+          <br>
+          ON選択時<br>
+          <div class="box2">
+          「ではみなさんは、そういうふうに川だと云(い)われたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
+          先生は、黒板に吊(つる)した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを指(さ)しながら、みんなに問(とい)をかけました。
+          </div>
+          </div>
+        </details>
+
+        <br>
+        <br>
+
+        <h3>ライセンス表示</h3>
+        CSS側で定型文を設定しているため、タグを貼るだけで以下のような文言表示が反映できます。
+        <!-- ライセンス表示パーツ：ここから -->
+        <div class="licence"></div>
+        <!-- ライセンス表示パーツ：ここまで -->
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h1 id="agreement">利用規約</h1>
+        本テンプレートは、HTML形式のシナリオ配布がもっとお気軽にできるようになるといいなあ、の考えのもと作られています。<br>
+        （使用時には、ツール使用でHTML形式に変換してテンプレに流し込むとかすると楽だと思います。）<br>
+        <br>
+        プログラム知識の少ない人間の作った拙いものですので、色々とお目こぼしいただけますと幸いです。<br>
+        <br>
+        <br>
+        <br>
+        <h4>NG 禁止事項</h4>
+        <div class="box1">
+          <ul>
+            <li>本テンプレートの自作発言</li>
+            <li>頒布ファイルそのままの形での再配布（無償/有償問わず）</li>
+            <li>法律に違反することに関連した利用</li>
+          </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <h4>OK 許可していること</h4>
+        <div class="box1">
+          <strong>購入不要、無料利用可能</strong>
+          <ul>
+            <li>本テンプレートを利用した【シナリオ】の公開及び頒布</li>
+            <ul>
+              <li>無償/有償問わず</li>
+              <li>改変した場合を含む</li>
+              <li>既存のHTMLファイルに部分利用した場合を含む</li>
+            </ul>
+          </ul>
+        </div>
+        <br>
+        <div class="box1">
+          <strong>「テンプレート配布用」の購入が必要</strong>
+          <ul>
+            <li>本テンプレートを改変・部分利用した【テンプレート】の公開及び配布</li>
+            <ul>
+              <li>無償/有償問わず</li>
+              <li>改変・部分利用の大小を問わず</li>
+              <li>配布時には、配布物内に本テンプレートの配布元情報記載が必要。要リンクシェア。</li>
+            </ul>
+          </ul>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="history">
+        ▽2022/11/26 up
+        </div>
+        </div><!-- class:text -->
+
+      </div><!-- class:contents -->
+    </div><!-- class:wrap -->
+    <footer></footer>
+    <div id="page_top"><a href="#"></a></div>
+  </body>
+</html>
+   
