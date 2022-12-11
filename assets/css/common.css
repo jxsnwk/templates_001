@@ -133,6 +133,7 @@ h4 {
 }
 
 .box3 {
+  background-color: var(--bg0);
   border: solid 1px var(--bg1);
 }
 
