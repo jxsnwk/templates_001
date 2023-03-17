@@ -48,3 +48,32 @@ function rubyOn(){
 	  }
 	}, 100 );
 }
+
+// 単語置換
+function changeWord() {
+	var arrDefWord=new Array();
+	var arrWord=new Array();
+
+	// 置換対象の単語数（決定・リセットボタン分を数から引くため-2する）	
+	var wordCount = document.change.getElementsByTagName('input').length - 2;
+
+    for(var i = 0; i < wordCount; i++) {
+		var inputItem = document.change.getElementsByTagName('input').item(i);
+		arrDefWord[i] = inputItem.placeholder;// 置換前
+		arrWord[i] = inputItem.value;// 置換後
+	}
+
+	// 置換処理
+	for(var i = 0; i < wordCount; i++) {
+		if (arrWord[i]) {
+		document.body.innerHTML = document.body.innerHTML.split(arrDefWord[i]).join(arrWord[i]);
+	}
+	document.change.getElementsByTagName('input').item(i).setAttribute('placeholder',arrWord[i]?arrWord[i]:arrDefWord[i]);
+	document.change.getElementsByTagName('input').item(i).setAttribute('value',arrWord[i]);
+  }
+}
+
+// ページ更新
+function pageReload(){
+	window.location.reload();
+}

@@ -83,6 +83,22 @@ input {
   background-color: var(--bg0);
 }
 
+input::-webkit-input-placeholder {
+  color: var(--border3);
+}
+
+input:-ms-input-placeholder {
+  color: var(--border3);
+}
+
+input::-ms-input-placeholder {
+  color: var(--border3);
+}
+
+input::placeholder {
+  color: var(--border3);
+}
+
 /* ヘッダー */
 header {
   max-width: 880px;

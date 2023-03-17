@@ -82,4 +82,27 @@
   white-space: pre-wrap;
   content: "本シナリオは、「株式会社アークライト」及び「株式会社KADOKAWA」が権利を有する『クトゥルフ神話TRPG』の二次創作物です。\A" "Call of Cthulhu is copyright (C)1981, 2015, 2019 by Chaosium Inc. ;all rights reserved. Arranged by Arclight Inc.\A" "Call of Cthulhu is a registered trademark of Chaosium Inc.\A" "PUBLISHED BY KADOKAWA CORPORATION";
 }
+
+/* 単語置換 */
+form[name="change"] input {
+  border-radius: 8px;
+  margin: 0 0 0 2px;
+  padding: 2px 5px;
+}
+
+form[name="change"] input[type="button"] {
+  font-size: 0.8em;
+  padding: 5px 8px;
+  border: none;
+  color: #FFF;
+  background: -webkit-gradient(linear, left bottom, left top, from(#ccc), to(#eee));
+  background: linear-gradient(to top, #ccc 0%, #eee 100%);
+  -webkit-box-shadow: inset 1px 1px 1px #FFF;
+          box-shadow: inset 1px 1px 1px #FFF;
+}
+
+form[name="change"] input[type="button"]:active {
+  background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#ccc));
+  background: linear-gradient(to bottom, #aaa 0%, #ccc 100%);
+}
 /*# sourceMappingURL=parts.css.map */

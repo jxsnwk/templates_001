@@ -61,8 +61,24 @@
       </ul>
     </div><!-- class:navi -->
 
-    <div class="contents">
+    <div class="contents" id="contents">
       <div class="text" id="countTextarea">
+
+        <span id="change"></span>
+        <!-- 単語置換パーツ：ここから -->
+        <form name="change">
+        単語1<input name="name0" type="text" value="" placeholder="{PC苗字}"><br> 
+        単語2<input name="name1" type="text" value="" placeholder="{PC名前}"><br> 
+        <br> 
+        単語3<input name="name2" type="text" value="" placeholder="{NPC苗字}"><br> 
+        単語4<input name="name3" type="text" value="" placeholder="{NPC名前}"><br> 
+        <br>
+        <input type="button" value="置換" onclick="changeWord()"> 
+        <input type="button" value="リセット" onclick="pageReload()">
+        </form>
+        <!-- 単語置換パーツ：ここまで -->
+        <br>
+        <br>
 
        <h1 id="pl">PL情報</h1>
        <table class="overview">
@@ -93,9 +109,9 @@
       </table>
 
        <h2>シナリオ概要</h2>
-       自宅に届いた招待状。<br>
+       {PC苗字}{PC名前}の自宅に届いた招待状。<br>
        それは、知人のフルート奏者の誕生パーティー開催を知らせるものだった。<br>
-       そうして訪れた孤島の洋館は、台風の来訪で外界と閉ざされることとなる。<br>
+       そうして{NPC苗字}{NPC名前}とともに訪れた孤島の洋館は、台風の来訪で外界と閉ざされることとなる。<br>
        <br>
        探偵、隠し財産の噂に、島に伝わるわらべ歌。<br>
        何も起きないはずもなく。<br>
@@ -108,6 +124,7 @@
        <br>
        <br>
 
+       <br>
        <h1 id="kp">KP情報</h1>
        本文はこのように表示されます。<br>
        その他装飾は以下の通りです。<br>
@@ -148,6 +165,10 @@
        <br>
 
        <h2>機能類紹介</h2>
+       各機能の使用方法補足、既存のHTMLにパーツのみ使用したい場合は以下ページをご参照ください。<br>
+       <a href="https://github.com/jxsnwk/templates_001/wiki" target="_blank">https://github.com/jxsnwk/templates_001/wiki</a><br>
+       <br>
+       <br>
        <h3>文字カウント</h3>
        <a href="#">シナリオタイトル下「(本文：約〇〇字)」の部分</a>は、100単位四捨五入でふんわり自動カウントしています。<br>
 
@@ -195,6 +216,41 @@
         <!-- ライセンス表示パーツ：ここまで -->
         <br>
 
+        <h3>単語置換</h3>
+        単語置換機能です。文中に使用されている置換対象の単語を一括置換します。<br>
+        <a href="#change">こちらの入力フォーム</a>から、HTML内単語を置換できます。<br>
+        <br>
+        置換箇所の特別な指定などは不要です。（その代わり、同じ単語で置換する/しないは区別ができません。全て置換されます）<br>
+        JavaScript側の調整も不要、HTML側の調整のみで置換語句を設定できます。<br>
+        <details>
+          <summary>
+            調整例
+          </summary>
+          <div class="box1 small">
+            &lt;!-- 単語置換パーツ：ここから --&gt;<br>
+            &lt;form name=&quot;change&quot;&gt;<br>
+            単語1&lt;input name=&quot;name0&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;{PC苗字}&quot;&gt;&lt;br&gt; <br>
+            単語2&lt;input name=&quot;name1&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;{PC名前}&quot;&gt;&lt;br&gt; <br>
+            &lt;br&gt; <br>
+            単語3&lt;input name=&quot;name2&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;<b>①デフォルト置換単語</b>&quot;&gt;&lt;br&gt; <br>
+            <s>単語4&lt;input name=&quot;name3&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;{NPC名前}&quot;&gt;&lt;br&gt; </s><b>②減らす場合</b><br>
+            単語5&lt;input name=&quot;<b>③増やす場合</b>&quot; type=&quot;text&quot; value=&quot;&quot; placeholder=&quot;{NPC一人称}&quot;&gt;&lt;br&gt; <br>
+            &lt;br&gt;<br>
+            &lt;input type=&quot;button&quot; value=&quot;置換&quot; onclick=&quot;changeWord()&quot;&gt; <br>
+            &lt;input type=&quot;button&quot; value=&quot;リセット&quot; onclick=&quot;pageReload()&quot;&gt;<br>
+            &lt;/form&gt;<br>
+            &lt;!-- 単語置換パーツ：ここまで --&gt;<br>
+          </div>
+          ①デフォルト置換単語<br>
+          「placeholder=""」部分にデフォルトの置換対象単語を設定して使用してください。<br><br>
+          ②減らす場合<br>
+          置換する単語の種類を減らす場合は、input行を丸ごと削ればOKです。<br><br>
+          ③増やす場合<br>
+          置換する単語の種類を増やす（=input行を増やす）場合は、他のinputの「name=""」と被らない値を設定してください。name4みたいなのが無難ですが、適当につけても動くかと思います。<br>
+          <br>
+
+
+        </details>
         <br>
         <br>
         <br>
