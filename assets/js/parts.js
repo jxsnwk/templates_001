@@ -1,20 +1,30 @@
+// ------------------------------
 // 文字数カウント
+// ------------------------------
 function countText() {
 	var result = document.getElementById("countTextarea").innerText.replace(/\s+/g,'').length;
 	result = Math.round(result/100)*100; // 100文字単位で丸める
 	document.getElementById("countResult").innerText = '約' + result + '文字';
 }
 
+// ------------------------------
 // コピペ時ふりがなON/OFF
-function rubyToggle(){
+// ------------------------------
+function rubyToggle(kakkoFlg = true){
+	if(typeof kakkoFlg != "boolean") {
+		// 想定と異なる値が渡された場合、デフォルト値「true」に書き換え
+		kakkoFlg = true;
+	}
+
 	var rubyToggle = document.querySelector('input#toggle');
 	if(rubyToggle.checked === true) {
-		rubyOn();
+		rubyOn(kakkoFlg);
 	}else{
 		rubyOff();
 	}
 }
 
+// ルビOFF時
 function rubyOff(){
 	var c = document.body.className;
 	if( c.match(/\s*rubyoff/) ){ return }
@@ -22,21 +32,33 @@ function rubyOff(){
 	setTimeout( function(){ document.body.className = c }, 100 );
 }
 
-function rubyOn(){
+// ルビON時
+function rubyOn(kakkoFlg){
+	const kakkoBefore = "("; // 前括弧
+	const kakkoAfter  = ")"; // 後括弧
+
 	var c = document.body.className;
 	if( c.match(/\s*rubyon/) ){ return }
-	var rubyOnHTML=new Array();;
-	var rubyOnText=new Array();;
+	var rubyOnHTML=new Array();
+	var rubyOnText=new Array();
 	var ruby = document.getElementsByTagName('ruby');
+	// var rp = document.getElementsByTagName('rp');
 
 	// 元の値を保持
     for(var i = 0; i < ruby.length; i++) {
 		rubyOnHTML[i] = ruby[i].innerHTML;
 		rubyOnText[i] = ruby[i].innerText;
 	  }
-	// 括弧付きにしたい
+
+	// ルビ情報を取得・整形
     for(var i = 0; i < ruby.length; i++) {
-		ruby[i].innerText = rubyOnHTML[i].replace(/<r[a-z]*>|<\/r[a-z]*>/g, "");
+		if (kakkoFlg == false) {
+			// 括弧が不要な場合
+			kakkoBefore = "";
+			kakkoAfter  = "";
+		}
+		ruby[i].innerHTML = ruby[i].innerHTML.replace("<rt>", kakkoBefore) + kakkoAfter;
+		ruby[i].innerText = ruby[i].innerHTML.replace(/<r[a-z]*>|<\/r[a-z]*>/g, "");
 	  }
 
 	setTimeout( function(){ 
@@ -49,7 +71,9 @@ function rubyOn(){
 	}, 100 );
 }
 
+// ------------------------------
 // 単語置換
+// ------------------------------
 function changeWord() {
 	var arrDefWord=new Array();
 	var arrWord=new Array();
@@ -73,7 +97,9 @@ function changeWord() {
   }
 }
 
+// ------------------
 // ページ更新
+// ------------------
 function pageReload(){
 	window.location.reload();
 }

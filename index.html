@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/css/parts.css">
     <script src="./assets/js/parts.js"></script>
   </head>
+  <!-- ふりがな前後の()が不要な場合、「oncopy="rubyToggle(false)"」に変更 -->
   <body oncopy="rubyToggle()" onload="countText()">
     <header>
       <div class="title">シナリオタイトル<br></div>
@@ -115,7 +116,7 @@
        <br>
        探偵、隠し財産の噂に、島に伝わるわらべ歌。<br>
        何も起きないはずもなく。<br>
-       果たして、聴こえた不気味なフルートの音色が<ruby><rb>誘</rb><rp>(</rp><rt>いざな</rt><rp>)</rp></ruby>う先は……。<br>
+       果たして、聴こえた不気味なフルートの音色が<ruby><rb>誘</rb><rt>いざな</rt></ruby>う先は……。<br>
        <br>
        という感じで使えます。<br>
        <br>
@@ -169,21 +170,21 @@
        <a href="https://github.com/jxsnwk/templates_001/wiki" target="_blank">https://github.com/jxsnwk/templates_001/wiki</a><br>
        <br>
        <br>
-       <h3>文字カウント</h3>
+       <h3>(1)文字カウント</h3>
        <a href="#">シナリオタイトル下「(本文：約〇〇字)」の部分</a>は、100単位四捨五入でふんわり自動カウントしています。<br>
 
        <br>
        <br>
 
-       <h3>コピペ時ふりがなON/OFF</h3>
+       <h3>(2)コピペ時ふりがなON/OFF</h3>
         コピー＆ペースト時に、ふりがなをつけた状態で貼り付けるかどうかを選べます。<br>
         左上のボタンでON/OFFが切り替えられます。デフォルトはOFFです。<br>
         以下サンプルテキストのコピペで挙動をご確認いただけます。<br>
         <br>
         サンプルテキスト<br>
         <div class="box1">
-        「ではみなさんは、そういうふうに川だと<ruby><rb>云</rb><rp>(</rp><rt>い</rt><rp>)</rp></ruby>われたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
-        先生は、黒板に<ruby><rb>吊</rb><rp>(</rp><rt>つる</rt><rp>)</rp></ruby>した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを<ruby><rb>指</rb><rp>(</rp><rt>さ</rt><rp>)</rp></ruby>しながら、みんなに<ruby><rb>問</rb><rp>(</rp><rt>とい</rt><rp>)</rp></ruby>をかけました。<br>
+        「ではみなさんは、そういうふうに川だと<ruby><rb>云</rb><rt>い</rt></ruby>われたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
+        先生は、黒板に<ruby><rb>吊</rb><rt>つる</rt></ruby>した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを<ruby><rb>指</rb><rt>さ</rt></ruby>しながら、みんなに<ruby><rb>問</rb><rt>とい</rt></ruby>をかけました。<br>
         </div>
         <a href="https://www.aozora.gr.jp/cards/000081/files/456_15050.html" target="_blank">宮沢賢治作「銀河鉄道の夜」　青空文庫より引用</a><br>
         <br>
@@ -203,20 +204,41 @@
           「ではみなさんは、そういうふうに川だと云(い)われたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
           先生は、黒板に吊(つる)した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを指(さ)しながら、みんなに問(とい)をかけました。
           </div>
-          </div>
+          <br>
+          <br>
         </details>
 
+        <details>
+          <summary>
+            調整例
+          </summary>
+          デフォルトでは、ふりがなの前後に「(」「)」が表示されます。<br>
+          表示しない場合、「oncopy="rubyToggle()"」の引数に「false」を追記します。<br>
+          <div class="box1">
+            &lt;body oncopy="rubyToggle(<b>false</b>)" onload="countText()"&gt;
+          </div>
+          <br>
+          ふりがなON選択 & false時の想定値
+          <div class="box2">
+          「ではみなさんは、そういうふうに川だと云いわれたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」<br>
+          先生は、黒板に吊つるした大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを指さしながら、みんなに問といをかけました。
+          </div>
+          <br>
+          <br>
+        </details>
+
+      </div>
         <br>
         <br>
 
-        <h3>ライセンス表示</h3>
+        <h3>(3)ライセンス表示</h3>
         CSS側で定型文を設定しているため、タグを貼るだけで以下のような文言表示が反映できます。
         <!-- ライセンス表示パーツ：ここから -->
         <div class="licence"></div>
         <!-- ライセンス表示パーツ：ここまで -->
         <br>
 
-        <h3>単語置換</h3>
+        <h3>(4)単語置換</h3>
         単語置換機能です。文中に使用されている置換対象の単語を一括置換します。<br>
         <a href="#change">こちらの入力フォーム</a>から、HTML内単語を置換できます。<br>
         <br>
@@ -335,7 +357,8 @@
         <br>
 
         <div class="history">
-        ▽2022/12/11 up
+        ▽2022/12/11 up<br>
+        ▽2024/07/28 CSS・JS調整
         </div>
         </div><!-- class:text -->
 
